@@ -1,0 +1,132 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$heart-name: 'heart'
+$heart-x: 67px
+$heart-y: 0px
+$heart-offset-x: -67px
+$heart-offset-y: 0px
+$heart-width: 22px
+$heart-height: 20px
+$heart-total-width: 89px
+$heart-total-height: 57px
+$heart-image: 'sprite.png'
+$heart: (67px, 0px, -67px, 0px, 22px, 20px, 89px, 57px, 'sprite.png', 'heart', )
+$hood-name: 'hood'
+$hood-x: 0px
+$hood-y: 0px
+$hood-offset-x: 0px
+$hood-offset-y: 0px
+$hood-width: 37px
+$hood-height: 30px
+$hood-total-width: 89px
+$hood-total-height: 57px
+$hood-image: 'sprite.png'
+$hood: (0px, 0px, 0px, 0px, 37px, 30px, 89px, 57px, 'sprite.png', 'hood', )
+$mail-name: 'mail'
+$mail-x: 67px
+$mail-y: 20px
+$mail-offset-x: -67px
+$mail-offset-y: -20px
+$mail-width: 22px
+$mail-height: 12px
+$mail-total-width: 89px
+$mail-total-height: 57px
+$mail-image: 'sprite.png'
+$mail: (67px, 20px, -67px, -20px, 22px, 12px, 89px, 57px, 'sprite.png', 'mail', )
+$pencil-name: 'pencil'
+$pencil-x: 0px
+$pencil-y: 30px
+$pencil-offset-x: 0px
+$pencil-offset-y: -30px
+$pencil-width: 27px
+$pencil-height: 27px
+$pencil-total-width: 89px
+$pencil-total-height: 57px
+$pencil-image: 'sprite.png'
+$pencil: (0px, 30px, 0px, -30px, 27px, 27px, 89px, 57px, 'sprite.png', 'pencil', )
+$phone-name: 'phone'
+$phone-x: 27px
+$phone-y: 30px
+$phone-offset-x: -27px
+$phone-offset-y: -30px
+$phone-width: 26px
+$phone-height: 26px
+$phone-total-width: 89px
+$phone-total-height: 57px
+$phone-image: 'sprite.png'
+$phone: (27px, 30px, -27px, -30px, 26px, 26px, 89px, 57px, 'sprite.png', 'phone', )
+$photo-name: 'photo'
+$photo-x: 37px
+$photo-y: 0px
+$photo-offset-x: -37px
+$photo-offset-y: 0px
+$photo-width: 30px
+$photo-height: 25px
+$photo-total-width: 89px
+$photo-total-height: 57px
+$photo-image: 'sprite.png'
+$photo: (37px, 0px, -37px, 0px, 30px, 25px, 89px, 57px, 'sprite.png', 'photo', )
+$spritesheet-width: 89px
+$spritesheet-height: 57px
+$spritesheet-image: 'sprite.png'
+$spritesheet-sprites: ($heart, $hood, $mail, $pencil, $phone, $photo, )
+$spritesheet: (89px, 57px, 'sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SASS
+//
+// @include sprites($spritesheet-sprites)
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)

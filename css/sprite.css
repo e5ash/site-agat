@@ -1,0 +1,40 @@
+i.icon {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative; }
+
+i.icon-heart {
+  background-image: url(../img/sprite.png);
+  background-position: -67px 0px;
+  width: 22px;
+  height: 20px; }
+
+i.icon-hood {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 37px;
+  height: 30px; }
+
+i.icon-mail {
+  background-image: url(../img/sprite.png);
+  background-position: -67px -20px;
+  width: 22px;
+  height: 12px; }
+
+i.icon-pencil {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -30px;
+  width: 27px;
+  height: 27px; }
+
+i.icon-phone {
+  background-image: url(../img/sprite.png);
+  background-position: -27px -30px;
+  width: 26px;
+  height: 26px; }
+
+i.icon-photo {
+  background-image: url(../img/sprite.png);
+  background-position: -37px 0px;
+  width: 30px;
+  height: 25px; }

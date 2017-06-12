@@ -1,0 +1,109 @@
+@media screen and (max-width: 1170px) {
+  button#sticks {
+    display: block; }
+  .nav-line {
+    min-height: 40px; }
+  .nav-line__list {
+    display: none;
+    position: relative;
+    padding-top: 40px; }
+  .nav-block {
+    min-height: auto;
+    width: 100%;
+    text-align: center;
+    background: #C89071;
+    padding-top: 0; }
+    .nav-block:after, .nav-block:before {
+      display: none; }
+  .nav-block__item {
+    display: inline-block;
+    padding-right: 12.4px;
+    padding-left: 12.4px;
+    -webkit-transition: .3s;
+    transition: .3s;
+    font-size: 14px; }
+  .nav-block__link {
+    color: black;
+    padding: 6px 12.4px; }
+    .nav-block__link:hover {
+      color: white; }
+  .aside {
+    display: none;
+    float: none;
+    width: 100%; }
+  .aside_left .nav-block {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .aside_right .nav-block {
+    padding-bottom: 20px; }
+  .content {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px; } }
+
+@media screen and (max-width: 850px) {
+  button#sticks {
+    right: 15px; }
+  .content {
+    width: 100%; }
+  .main {
+    text-align: center; }
+  .main__item {
+    display: inline-block;
+    background-size: cover;
+    background-position: top center;
+    width: 24%; }
+  .main__text:before {
+    left: -webkit-calc(50% - 30.5px);
+    left: calc(50% - 30.5px); } }
+
+@media screen and (max-width: 800px) {
+  button {
+    margin-left: auto;
+    margin-right: auto; }
+  .header, .footer {
+    background: #412824;
+    text-align: center; }
+  .header__button {
+    padding-top: 10px;
+    padding-bottom: 12px; }
+  .header__contacts {
+    padding-bottom: 20px; }
+  .aside_left .nav-block {
+    padding-top: 0;
+    padding-bottom: 0; }
+  .logo, .contacts, .button__col {
+    float: none;
+    margin: 0; }
+  .logo__img {
+    margin-left: auto;
+    margin-right: auto; }
+  .footer {
+    padding-bottom: 15px; } }
+
+@media screen and (max-width: 670px) {
+  .main__item {
+    width: 49%;
+    margin-bottom: 2%;
+    margin-right: 0; }
+    .main__item:nth-of-type(odd) {
+      margin-right: 2%; }
+  .footer {
+    position: relative; } }
+
+@media screen and (max-width: 500px) {
+  .nav-line__link {
+    display: block; }
+  .nav-line__item, .nav-block__item {
+    display: block; } }
+
+@media screen and (max-width: 335px) {
+  body {
+    height: auto; }
+  .content, .main {
+    min-height: auto; }
+  .main__item {
+    height: 120px; }
+  .main__block {
+    font-size: 14px; } }
